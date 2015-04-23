@@ -38,3 +38,44 @@ class Counter {
   }
 }
 ```
+
+####Define subscripts to provide access to their values using subscript syntax
+
+```swift
+class WeekClass {
+    
+    let week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    
+    subscript(day: Int) -> String {
+        return week[day]
+    }
+    
+    subscript(day: String) -> Int {
+        return find(week, day)!
+    }
+}
+
+struct WeekStruct {
+    
+    //US consider Sunday as first day of the week
+    let week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    
+    subscript(day: Int) -> String {
+        return week[day]
+    }
+    
+    subscript(day: String) -> Int {
+        return find(week, day)!
+    }
+}
+
+var weekClassInstance = WeekClass()
+weekClassInstance["Monday"] //1 (Index of Monday on the week)
+weekClassInstance[1] //"Monday"
+
+var weekStructInstance = WeekStruct()
+weekStructInstance["Sunday"] //0
+weekStructInstance[0] //"Sunday"
+```
+
+
