@@ -78,4 +78,26 @@ weekStructInstance["Sunday"] //0
 weekStructInstance[0] //"Sunday"
 ```
 
+####Define initializers to set up their initial state
+
+```swift
+struct Matrix {
+    let rows: Int, columns: Int
+    init(rows: Int,columns:Int){
+        //Initialize
+        self.rows = rows
+        self.columns = columns
+    }
+}
+
+var mat = Matrix(rows: Int, columns: Int)
+//Structures have an automatically-generated memberwise initializer. So the initializer is optional here
+
+class User {
+  init(firstName: String, lastName: String){
+    //Initialize
+  }
+}
+
+```
 
