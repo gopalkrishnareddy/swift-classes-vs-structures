@@ -100,4 +100,54 @@ class User {
 }
 
 ```
+####Be extended to expand their functionality beyond a default implementation
+
+```swift
+struct Rectangle {
+    var originX = 0.0, originY = 0.0
+    var width = 0.0, height = 0.0
+    
+    init(originX: Double,originY: Double,width: Double, height:Double){
+        self.originX = originX
+        self.originY = originY
+        self.width = width
+        self.height = height
+    }
+}
+
+//This extension add functionality to exsisting struct
+extension Rectangle{
+    func area() -> Double{
+        return self.width * self.height
+    }
+}
+```
+```swift
+class Dice {
+    
+    let sides:UInt32
+    
+    init(sides: UInt32){
+        self.sides = sides
+    }
+    
+    func roll() -> UInt32{
+       return arc4random_uniform(self.sides) + 1
+    }
+}
+
+var dice = Dice(sides: 6)
+dice.roll()
+
+extension Dice{
+
+    //Note about module bias. For random number generation you should use arc4random_uniform over arc4random % upper_bound to avoid modulo bias
+    //http://stackoverflow.com/questions/17640624/arc4random-modulu-biased
+    func rollWithModuloBias() -> UInt32{
+        return arc4random() % self.sides
+    }
+}
+dice.rollWithModuloBias()
+
+```
 
