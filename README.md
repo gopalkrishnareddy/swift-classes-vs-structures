@@ -150,4 +150,47 @@ extension Dice{
 dice.rollWithModuloBias()
 
 ```
+####Conform to protocols to provide standard functionality of a certain kind
 
+```swift
+protocol Descriptable{
+    func describe() -> String
+}
+
+struct Rectangle : DebugPrintable {
+    
+    var originX = 0.0, originY = 0.0
+    var width = 0.0, height = 0.0
+    
+    init(originX: Double,originY: Double,width: Double, height:Double){
+        self.originX = originX
+        self.originY = originY
+        self.width = width
+        self.height = height
+    }
+    
+    func describe() -> String{
+        return "Rectangle with origin (\(originX),\(originY)) and width = \(width) , height = \(height)"
+    }
+    
+}
+```
+
+```swift
+class Dice : Descriptable{
+    
+    let sides:UInt32
+    
+    init(sides: UInt32){
+        self.sides = sides
+    }
+    
+    func roll() -> UInt32{
+       return arc4random_uniform(self.sides) + 1
+    }
+    
+    func describe() -> String {
+        return "A Dice with \(sides) sides"
+    }
+}
+```
