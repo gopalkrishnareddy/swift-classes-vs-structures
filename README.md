@@ -1,6 +1,6 @@
-##Both classes and structures in Swift
+## Both classes and structures in Swift
 
-####Define properties to store values
+#### Define properties to store values
 
 ```swift
 class ProfilePicture {
@@ -14,7 +14,7 @@ struct Resolution{
 }
 ```
 
-####Define methods to provide functionality
+#### Define methods to provide functionality
 
 ```swift
 struct Frame{
@@ -39,7 +39,7 @@ class Counter {
 }
 ```
 
-####Define subscripts to provide access to their values using subscript syntax
+#### Define subscripts to provide access to their values using subscript syntax
 
 ```swift
 class WeekClass {
@@ -78,7 +78,7 @@ weekStructInstance["Sunday"] //0
 weekStructInstance[0] //"Sunday"
 ```
 
-####Define initializers to set up their initial state
+#### Define initializers to set up their initial state
 
 ```swift
 struct Matrix {
@@ -100,7 +100,7 @@ class User {
 }
 
 ```
-####Be extended to expand their functionality beyond a default implementation
+#### Be extended to expand their functionality beyond a default implementation
 
 ```swift
 struct Rectangle {
@@ -150,7 +150,7 @@ extension Dice{
 dice.rollWithModuloBias()
 
 ```
-####Conform to protocols to provide standard functionality of a certain kind
+#### Conform to protocols to provide standard functionality of a certain kind
 
 ```swift
 protocol Descriptable{
